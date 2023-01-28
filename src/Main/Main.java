@@ -6,29 +6,29 @@ public class Main {
 		String[] websites = { 
 				"www.google.com"		,
 				"www.facebook.com"		,
-				"www.newyorktimes.com"	,
+				"www.newyorktimes.com"		,
 				"www.rtc.edu"			,
 				"www.reddit.com"		,
 				"www.msn.com"			,
 				"www.outlook.com"		,
-				"www.mail.google.com"	,
+				"www.mail.google.com"		,
 				"musescore.com"			,
 				"google.com"			,
 				"facebook.com"			,
-				"fb.com"				,
+				"fb.com"			,
 				"newyorktimes.com"		,
-				"rtc.edu"				,
+				"rtc.edu"			,
 				"reddit.com"			,
-				"msn.com"				,
+				"msn.com"			,
 				"outlook.com"			,
 				"mail.google.com"		,
 				"musescore.com"			,
 				
 		};
 		
-		HTTPReq newReq 	= new HTTPReq	("/index.html" , "10.0.0.1", 0);
-		HTTPReq newReq2 = new HTTPReq	("/dogs.html" , "10.0.0.9", 1);
-		HTTPReq newReq3 = new HTTPReq	("/cats.html" , "10.0.0.23", 2);
+		HTTPReq newReq 	= new HTTPReq("/index.html" , "10.0.0.1", 0) ;
+		HTTPReq newReq2 = new HTTPReq("/dogs.html"  , "10.0.0.9", 1) ;
+		HTTPReq newReq3 = new HTTPReq("/cats.html"  , "10.0.0.23", 2);
 		
 		Queue<HTTPReq> newQueue = new Queue<HTTPReq>(newReq);
 		
@@ -43,12 +43,12 @@ public class Main {
 			newQueue.enqueue(newRequest);
 		}
 		newQueue.searchAndRemove(new HTTPReq("/index.html" , "10.0.0.1", 2), (HTTPReq a, HTTPReq b) -> {
-			if(b.UUID == 9) {
-				System.out.println("REMOVING.... " + b);
-				return true;
-			}
-			return false;
-		});		
+												if(b.UUID == 9) {
+													System.out.println("REMOVING.... " + b);
+													return true;
+												}
+												return false;
+											});		
 		while(newQueue.Iterator()) {
 			System.out.println("ITERATOR : " + newQueue.getCurrentNode()._data);	
 		}

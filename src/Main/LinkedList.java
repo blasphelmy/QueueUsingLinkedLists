@@ -24,11 +24,10 @@ public class LinkedList<TYPE> {
 		}
 		
 		Node<TYPE> newNode 	= new Node<TYPE>(data);
-		_tail.next 			= newNode;
+		_tail.next 		= newNode;
 		newNode.prev 		= _tail;
 		newNode.next 		= null;
-		
-		_tail 				= newNode;
+		_tail 			= newNode;
 		
 		_size++;
 		return true;
@@ -50,7 +49,7 @@ public class LinkedList<TYPE> {
 			_head.prev 	= new Node<TYPE>();
 		}if(_head.next != null) {
 			_head.next.prev = null;
-			_head 			= _head.next;
+			_head 		= _head.next;
 			_size--;
 			return currentHead;
 		}
@@ -80,7 +79,7 @@ public class LinkedList<TYPE> {
 				_it_curr.prev.next 	= newNode;
 				_it_curr.prev 		= newNode;
 				newNode.next 		= _it_curr;
-				_it_curr 			= null;
+				_it_curr 		= null;
 				_size++;
 				return;
 			}
@@ -180,11 +179,10 @@ public class LinkedList<TYPE> {
 		return true;
 	}
 	public Boolean 			Iterator		() 	{ return Iterator(false); 	}
-	public Node		<TYPE> 	getCurrentNode	() 	{ return _it_curr; 			}
-	public Node		<TYPE> 	getHead			()	{ return _head; 			}
-	public Node		<TYPE> 	getTail			() 	{ return _tail; 			}
-	public int 				getSize			()	{ return _size;				}
-	public Boolean			isEmpty			()	{ if(_size == 0) 
-													return true;
-											  	return false;			    }
-																			}
+	public Node		<TYPE> 	getCurrentNode		() 	{ return _it_curr; 		}
+	public Node		<TYPE> 	getHead			()	{ return _head; 		}
+	public Node		<TYPE> 	getTail			() 	{ return _tail; 		}
+	public int 			getSize			()	{ return _size;			}
+	public Boolean			isEmpty			()	{ if(_size == 0) return true;
+								  	return false;    		}
+}

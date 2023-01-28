@@ -7,5 +7,5 @@ public class Node<TYPE> {
 	public TYPE 		_data = null;
 	
 	public Node(TYPE data) 	{ this._data = data; 	}
-	public Node(         ) 	{						}
+	public Node(         ) 	{			}
 }
